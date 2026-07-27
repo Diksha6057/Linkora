@@ -1,13 +1,17 @@
-import React from 'react'
-
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+const LandingPage=() =>(
+  <>
+  <Navbar/>
+  </>
+);
 const App = () => {
   return (
-    <div> 
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  </div>
-  )
-}
+   <Routes>
+    <Route path='/' element={<LandingPage/>}/>
+   </Routes>
+  );
+};
 
 export default App

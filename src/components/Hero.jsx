@@ -29,8 +29,19 @@ const Hero = () => {
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-linear-to-tr from-violet-500/10 to-pink-500/5 rounded-full blur-3xl animate-float-medium">
             </div>
 
-            {/* Background particles / effects */}
+            {/* Background particles */}
             <div className="absolute inset-0 overflow-hidden">
+                {[...Array(8)].map((_, i) => (
+                    <div
+                        key={i}
+                        className="absolute w-px h-32 bg-linear-to-b from-transparent via-rose-400/20 to-transparent"
+                        style={{
+                            left: `${10 + i * 12}%`,
+                            top: "30%",
+                            animation: `float-vertical ${3 + i * 0.5}s ease-in-out infinite ${i * 0.2}s`,
+                        }}
+                    />
+                ))}
             </div>
 
         </section>

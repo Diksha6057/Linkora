@@ -7,7 +7,7 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-white/5">
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
 
@@ -24,9 +24,9 @@ const Navbar = () => {
                         </div>
 
                         <span className="text-2xl font-bold tracking-tight">
-                            <span className="bg-linear-to-r from-zinc-700 to-zinc-500 bg-clip-text text-transparent">
-                                MY
-                            </span>
+                            <span className="bg-linear-to-r from-white to-zinc-200 bg-clip-text text-transparent">
+    MY
+</span>
 
                             <span className="font-serif italic bg-linear-to-r from-red-400 via-amber-400 to-rose-400 bg-clip-text text-transparent">
                                 Type

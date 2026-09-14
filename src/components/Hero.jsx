@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import { Video, Phone, MessageCircle, Heart } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
     const containerRef = useRef(null)
-
+const navigate = useNavigate()
     return (
         <section
             ref={containerRef}
@@ -148,6 +149,17 @@ const Hero = () => {
 
                     ))}
 
+                </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16 animate-fade-in-up delay-300">
+                    <button onClick={()=>navigate("/chatroom")} className="group relative px-8 py-4 rounded-xl overflow-hidden">
+                        <div className="absolute inset-0 bg-linear-to-r from-rose-500 via-amber-500 to-violet-500 opacity-80 group-hover:opacity-100 transition-all duration-500"></div>
+                        <div className="absolute inset-px bg-[#0a0a0a] rounded-xl"></div>
+                        <div className="relative flex items-center gap-3 text-lg font-semibold">
+                            <span className="bg-linear-to-r from-rose-300 via-amber-300 to-violet-300 bg-clip-text text-transparent">
+                                Start Matching Free
+                            </span>
+                        </div>
+                    </button>
                 </div>
 
             </div>

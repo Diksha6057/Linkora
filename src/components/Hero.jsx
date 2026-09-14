@@ -1,15 +1,24 @@
 import React, { useRef } from 'react'
-import { Video, Phone, MessageCircle, Heart } from 'lucide-react'
+import {
+    Video,
+    Phone,
+    MessageCircle,
+    Heart,
+    ArrowRight,
+    Play
+} from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
     const containerRef = useRef(null)
-const navigate = useNavigate()
+    const navigate = useNavigate()
+
     return (
         <section
             ref={containerRef}
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
         >
+
             {/* Background radial gradients */}
             <div className="absolute inset-0 opacity-30">
 
@@ -33,6 +42,7 @@ const navigate = useNavigate()
 
             {/* Background particles */}
             <div className="absolute inset-0 overflow-hidden">
+
                 {[...Array(8)].map((_, i) => (
                     <div
                         key={i}
@@ -44,11 +54,13 @@ const navigate = useNavigate()
                         }}
                     />
                 ))}
+
             </div>
 
             {/* Hero content */}
             <div className="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-20 text-center">
 
+                {/* Heading */}
                 <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-white tracking-tight mb-6 leading-[0.9]">
 
                     <div className="animate-fade-in-up delay-100">
@@ -143,23 +155,61 @@ const navigate = useNavigate()
                                 </span>
 
                             </div>
-                          
 
                         </div>
 
                     ))}
 
                 </div>
+
+                {/* CTA buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16 animate-fade-in-up delay-300">
-                    <button onClick={()=>navigate("/chatroom")} className="group relative px-8 py-4 rounded-xl overflow-hidden">
-                        <div className="absolute inset-0 bg-linear-to-r from-rose-500 via-amber-500 to-violet-500 opacity-80 group-hover:opacity-100 transition-all duration-500"></div>
-                        <div className="absolute inset-px bg-[#0a0a0a] rounded-xl"></div>
+
+                    {/* Start Matching */}
+                    <button
+                        onClick={() => navigate("/chatroom")}
+                        className="group relative px-8 py-4 rounded-xl overflow-hidden"
+                    >
+
+                        <div className="absolute inset-0 bg-linear-to-r from-rose-500 via-amber-500 to-violet-500 opacity-80 group-hover:opacity-100 transition-all duration-500">
+                        </div>
+
+                        <div className="absolute inset-px bg-[#0a0a0a] rounded-xl">
+                        </div>
+
                         <div className="relative flex items-center gap-3 text-lg font-semibold">
+
                             <span className="bg-linear-to-r from-rose-300 via-amber-300 to-violet-300 bg-clip-text text-transparent">
                                 Start Matching Free
                             </span>
+
+                            <ArrowRight className="h-5 w-5 text-amber-300 group-hover:translate-x-1 transition-transform" />
+
                         </div>
+
                     </button>
+
+                    {/* See Real Stories */}
+                    <button
+                        className="group px-8 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-300 hover:border-white/20"
+                    >
+
+                        <div className="flex items-center gap-3 text-lg font-medium">
+
+                            <div className="p-2 rounded-full bg-linear-to-br from-rose-500/20 to-violet-500/20 group-hover:scale-110 transition-transform">
+
+                                <Play className="h-5 w-5 text-rose-400" />
+
+                            </div>
+
+                            <span className="bg-linear-to-r from-white to-zinc-300 bg-clip-text text-transparent">
+                                See Real Stories
+                            </span>
+
+                        </div>
+
+                    </button>
+
                 </div>
 
             </div>

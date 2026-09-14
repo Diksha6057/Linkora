@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { Video, Phone, MessageCircle, Heart } from 'lucide-react'
 
 const Hero = () => {
     const containerRef = useRef(null)
@@ -69,6 +70,7 @@ const Hero = () => {
 
                 </h1>
 
+                {/* Description */}
                 <div className="relative inline-block max-w-2xl mx-auto mb-12 animate-fade-in-up delay-400">
 
                     <div className="absolute -inset-1 bg-linear-to-r from-rose-400/20 via-transparent to-violet-400/20 rounded-2xl blur-xl">
@@ -92,6 +94,61 @@ const Hero = () => {
                         </span>
                         . No waiting, just genuine moments.
                     </p>
+
+                </div>
+
+                {/* Features */}
+                <div className="flex flex-wrap items-center justify-center gap-6 mb-12 animate-fade-in-up delay-500">
+
+                    {[
+                        {
+                            icon: <Video className="h-5 w-5" />,
+                            label: "HD Video",
+                            color: "from-rose-400 to-rose-600",
+                        },
+                        {
+                            icon: <Phone className="h-5 w-5" />,
+                            label: "Voice Call",
+                            color: "from-amber-400 to-amber-600",
+                        },
+                        {
+                            icon: <MessageCircle className="h-5 w-5" />,
+                            label: "Live Chat",
+                            color: "from-violet-400 to-violet-600",
+                        },
+                        {
+                            icon: <Heart className="h-5 w-5" />,
+                            label: "Smart Match",
+                            color: "from-pink-400 to-pink-600",
+                        },
+                    ].map((feature, idx) => (
+
+                        <div
+                            key={idx}
+                            className="group relative"
+                        >
+
+                            <div className="absolute inset-1 bg-linear-to-r opacity-0 group-hover:opacity-100 blur transition-all duration-500 rounded-xl">
+                            </div>
+
+                            <div className="relative flex items-center gap-2 px-4 py-3 rounded-xl glass backdrop-blur-xl group-hover:scale-105 transition-all duration-300">
+
+                                <div className={`p-2 rounded-lg bg-linear-to-br ${feature.color}`}>
+                                    {feature.icon}
+                                </div>
+
+                                <span className="text-zinc-200 font-medium">
+                                    {feature.label}
+                                </span>
+
+                            </div>
+                            <span className="text-sm font-mediummtext-zinc-200">
+                                {feature.label}
+                            </span>
+
+                        </div>
+
+                    ))}
 
                 </div>
 

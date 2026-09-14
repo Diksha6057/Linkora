@@ -142,9 +142,7 @@ const Hero = () => {
                                 </span>
 
                             </div>
-                            <span className="text-sm font-mediummtext-zinc-200">
-                                {feature.label}
-                            </span>
+                          
 
                         </div>
 

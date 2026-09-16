@@ -211,6 +211,33 @@ const Hero = () => {
                     </button>
 
                 </div>
+<div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto animate-fade-in-up delay-700">
+     {[
+            {
+              value: "2M+",
+              label: "Active Connections",
+              color: "text-rose-300",
+            },
+            {
+              value: "500K+",
+              label: "Video Dates Weekly",
+              color: "text-amber-300",
+            },
+            {
+              value: "98%",
+              label: "Satisfaction Rate",
+              color: "text-violet-300",
+            },
+            {
+              value: "<2s",
+              label: "Match Response Time",
+              color: "text-emerald-300",
+            },
+          ].map((stat, idx) => (
+           
+          ))}
+ 
+</div>
 
             </div>
 

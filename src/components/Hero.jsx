@@ -197,9 +197,7 @@ const Hero = () => {
                         <div className="flex items-center gap-3 text-lg font-medium">
 
                             <div className="p-2 rounded-full bg-linear-to-br from-rose-500/20 to-violet-500/20 group-hover:scale-110 transition-transform">
-
                                 <Play className="h-5 w-5 text-rose-400" />
-
                             </div>
 
                             <span className="bg-linear-to-r from-white to-zinc-300 bg-clip-text text-transparent">
@@ -211,33 +209,51 @@ const Hero = () => {
                     </button>
 
                 </div>
-<div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto animate-fade-in-up delay-700">
-     {[
-            {
-              value: "2M+",
-              label: "Active Connections",
-              color: "text-rose-300",
-            },
-            {
-              value: "500K+",
-              label: "Video Dates Weekly",
-              color: "text-amber-300",
-            },
-            {
-              value: "98%",
-              label: "Satisfaction Rate",
-              color: "text-violet-300",
-            },
-            {
-              value: "<2s",
-              label: "Match Response Time",
-              color: "text-emerald-300",
-            },
-          ].map((stat, idx) => (
-           
-          ))}
- 
-</div>
+
+                {/* Statistics */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto animate-fade-in-up delay-700">
+
+                    {[
+                        {
+                            value: "2M+",
+                            label: "Active Connections",
+                            color: "text-rose-300",
+                        },
+                        {
+                            value: "500K+",
+                            label: "Video Dates Weekly",
+                            color: "text-amber-300",
+                        },
+                        {
+                            value: "98%",
+                            label: "Satisfaction Rate",
+                            color: "text-violet-300",
+                        },
+                        {
+                            value: "<2s",
+                            label: "Match Response Time",
+                            color: "text-emerald-300",
+                        },
+                    ].map((stat, idx) => (
+
+                        <div
+                            key={idx}
+                            className="card-elegant p-6 backdrop-blur-xl hover:scale-105 transition-all duration-500 cursor-pointer group"
+                        >
+
+                            <div className={`text-3xl font-bold mb-2 ${stat.color} group-hover:scale-110 transition-transform`}>
+                                {stat.value}
+                            </div>
+
+                            <div className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                                {stat.label}
+                            </div>
+
+                        </div>
+
+                    ))}
+
+                </div>
 
             </div>
 

@@ -23,15 +23,17 @@ const Navbar = () => {
 
                         </div>
 
-                        <span className="text-2xl font-bold tracking-tight">
-                            <span className="bg-linear-to-r from-white to-zinc-200 bg-clip-text text-transparent">
-    MY
+            
+<span className="text-2xl font-bold tracking-tight">
+    <span className="bg-linear-to-r from-white to-zinc-200 bg-clip-text text-transparent">
+        Linkora
+    </span>
+
+    <span className="ml-2 font-serif italic bg-linear-to-r from-red-400 via-amber-400 to-rose-400 bg-clip-text text-transparent">
+        Connect
+    </span>
 </span>
 
-                            <span className="font-serif italic bg-linear-to-r from-red-400 via-amber-400 to-rose-400 bg-clip-text text-transparent">
-                                Type
-                            </span>
-                        </span>
                     </a>
 
                     {/* Desktop Get Started */}

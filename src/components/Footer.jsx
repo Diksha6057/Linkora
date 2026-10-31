@@ -1,71 +1,126 @@
-
-import React from 'react'
-import { Heart, Sparkles } from 'lucide-react'
+import React from 'react';
+import {
+  Heart,
+  MessageCircle,
+  CodeXml,
+  Globe,
+  Sparkles,
+  Mail,
+} from 'lucide-react';
 
 const Footer = () => {
-  return (
-    <footer className="relative bg-[#0a0a0a] overflow-hidden">
+  const socialLinks = [
+    { icon: MessageCircle, href: '#', label: 'Discord' },
+    { icon: CodeXml, href: '#', label: 'GitHub' },
+    { icon: Globe, href: '#', label: 'LinkedIn' },
+  ];
 
+  const footerLinks = ['About', 'Features', 'Community', 'Contact'];
+
+  return (
+    <footer className="relative overflow-hidden bg-[#0a0a0a]">
       {/* Top border */}
-      <div className="h-px bg-linear-to-r from-transparent via-white/5 to-transparent"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       {/* Background effects */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-linear-to-br from-rose-500/10 to-transparent rounded-full blur-3xl"></div>
+      <div className="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-purple-500/10 blur-[100px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-64 w-64 rounded-full bg-pink-500/10 blur-[100px]" />
 
-        <div className="absolute top-20 right-20 w-64 h-64 bg-linear-to-bl from-violet-500/10 to-transparent rounded-full blur-3xl"></div>
-      </div>
+      <div className="relative mx-auto max-w-7xl px-6 py-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 
-      {/* Footer content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
-        <div className="flex flex-col items-center text-center space-y-8">
-
-          <a
-            href="#"
-            className="group flex items-center gap-3 transition-all mb-2 duration-300 hover:scale-105"
-          >
-
-            {/* Logo icon */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-linear-to-r from-rose-500/20 to-violet-500/20 rounded-xl blur-md group-hover:blur-xl transition-all duration-500"></div>
-
-              <div className="relative w-10 h-10 rounded-xl bg-linear-to-br from-rose-500 to-amber-500 flex items-center justify-center shadow-lg">
-                <Heart className="w-5 h-5 text-white fill-white" />
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <a href="/" className="mb-5 inline-flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500">
+                <Sparkles className="h-5 w-5 text-white" />
               </div>
-            </div>
 
-            {/* Brand name */}
-            <span className="text-2xl font-bold tracking-tight">
-              <span className="bg-linear-to-r from-white to-zinc-200 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold text-white">
                 Linkora
               </span>
+            </a>
 
-              <span className="ml-2 font-serif italic bg-linear-to-r from-rose-300 to-amber-300 bg-clip-text text-transparent">
-                Connect
-              </span>
-            </span>
+            <p className="max-w-md text-sm leading-7 text-zinc-400">
+              Connect, collaborate, and build meaningful relationships.
+              Linkora brings people together through shared interests and
+              communities.
+            </p>
 
-            {/* Sparkles icon */}
-            <Sparkles className="h-4 w-4 text-amber-300 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+            {/* Social links */}
+            <div className="mt-6 flex items-center gap-4">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
 
-          </a>
-<p className="text-sm text-zinc-500 max-w-md mx-auto leading-relaxed">
-  Where genuine connections blossom through real conversations.
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    aria-label={item.label}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-zinc-400 transition-all duration-300 hover:border-purple-500 hover:bg-purple-500/10 hover:text-white"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
 
-  <span className="flex items-center justify-center gap-3 mt-2 text-xs text-zinc-400">
-    <span>Video dates</span>
-<span className="text-white text-lg font-bold">•</span>
-    <span>Voice chats</span>
-<span className="text-white text-lg font-bold">•</span>
-    <span>Real connections</span>
-  </span>
-</p>
-<div className="flex items-center gap-4"></div>
+          {/* Quick links */}
+          <div>
+            <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
+              Quick Links
+            </h3>
+
+            <ul className="space-y-3">
+              {footerLinks.map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="text-sm text-zinc-400 transition-colors duration-300 hover:text-purple-400"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
+              Get in Touch
+            </h3>
+
+            <p className="text-sm leading-7 text-zinc-400">
+              Have questions or suggestions? We'd love to hear from you.
+            </p>
+
+            <a
+              href="mailto:hello@linkora.com"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-purple-400 transition-colors hover:text-pink-400"
+            >
+              <Mail size={16} />
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom section */}
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
+          <p className="text-center text-sm text-zinc-500">
+            © {new Date().getFullYear()} Linkora. All rights reserved.
+          </p>
+
+          <p className="flex items-center gap-1 text-sm text-zinc-500">
+            Made with
+            <Heart size={14} className="fill-pink-500 text-pink-500" />
+            for the community
+          </p>
         </div>
       </div>
-
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
